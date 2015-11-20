@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :children_events
+
   devise_for :users
   root :to => "home#index", via: [:get, :post]
 
