@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 70px;
+}
+
+
+.td-links, .float-right {
+  float: right;
+}
+
+.nav-background-primary {
+  background-color: #E8E8E8;
+}
+
+.nav-color-primary {
+  color: #428BCA !important;
+}
+
+.panel-background-primary {
+  background-color: #F8F8F8;
+}
+
+.table-striped-primary>tbody>tr:nth-child(odd)>td,
+.table-striped-primary>tbody>tr:nth-child(odd)>th {
+   background-color: #E8E8E8
+ }
+
+.nav-icon-bar-color-primary {
+  background-color: #428BCA;
+}
+
+.panel-author-link {
+  font-size: 85%;
+}
