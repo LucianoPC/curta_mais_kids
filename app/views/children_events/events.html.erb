@@ -27,7 +27,7 @@
           </div>
           <div class="col-md-6">
             <h1><%= link_to(children_event.title, {controller: :children_events, action: :event_show, id: children_event.id}, class: "text-muted") %></h1>
-            <h3 class="hidden-xs"><%= children_event.date_time %></h3>
+            <h3 class="hidden-xs"><%= DateTimeHelper.format_date(children_event.date_time) %></h3>
             <ol class="list-inline text-warning">
               <% children_event.rating.times do |i| %>
                 <li>

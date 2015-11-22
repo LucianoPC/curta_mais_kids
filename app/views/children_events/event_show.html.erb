@@ -21,7 +21,7 @@
         </div>
         <div class="col-md-6">
           <h1><%= @children_event.title %></h1>
-          <h3 contenteditable="true"><%= @children_event.date_time %></h3>
+          <h3 contenteditable="true"><%= DateTimeHelper.format_date(@children_event.date_time) %></h3>
           <ol class="list-inline text-warning">
             <% @children_event.rating.times do |i| %>
               <li>
