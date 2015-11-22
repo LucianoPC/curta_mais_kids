@@ -1,11 +1,19 @@
 class ChildrenEventsController < ApplicationController
-  before_action :set_children_event, only: [:show, :edit, :update, :destroy, :event_show]
+  before_filter :authenticate_user!, except: [:events, :events_show]
+  before_action :set_children_event, only: [:show, :edit, :update, :destroy, :event_show, :make_rating]
 
   def events
     @children_events = ChildrenEvent.all
   end
 
   def event_show
+  end
+
+  def make_rating
+    @children_event.rating = (@children_event.rating + params[:rating].to_i) / 2
+    @children_event.save!
+
+    redirect_to({action: :event_show, id: @children_event.id}, notice: 'Parabéns, você avaliou esse evento!')
   end
 
   # GET /children_events

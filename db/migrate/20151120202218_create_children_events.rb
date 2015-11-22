@@ -5,7 +5,7 @@ class CreateChildrenEvents < ActiveRecord::Migration
       t.string :sub_title
       t.text :description
       t.string :address
-      t.integer :rating
+      t.integer :rating, default: 0
       t.binary :photo
       t.datetime :date_time
 

@@ -9,10 +9,8 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:rating) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%= model_class.human_attribute_name(:date_time) %></th>
-      <th><%= model_class.human_attribute_name(:phone) %></th>
-      <th><%= model_class.human_attribute_name(:localization) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -24,10 +22,8 @@
         <td><%= children_event.title %></td>
         <td><%= children_event.description %></td>
         <td><%= children_event.rating %></td>
-        <td><%= children_event.price %></td>
         <td><%= children_event.date_time %></td>
-        <td><%= children_event.phone %></td>
-        <td><%= children_event.localization %></td>
+        <td><%= children_event.address %></td>
         <td><%=l children_event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -46,3 +42,5 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_children_event_path,
             :class => 'btn btn-primary' %>
+<br />
+<br />

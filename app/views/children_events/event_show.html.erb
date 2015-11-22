@@ -22,6 +22,22 @@
         <div class="col-md-6">
           <h1><%= @children_event.title %></h1>
           <h3 contenteditable="true"><%= @children_event.date_time %></h3>
+          <ol class="list-inline text-warning">
+            <% @children_event.rating.times do |i| %>
+              <li>
+                  <%= link_to({controller: :children_events, action: :make_rating, id: @children_event.id, rating: (i+1)}) do %>
+                    <i class="fa fa-2x fa-fw fa-star rate-star"></i>
+                  <% end %>
+              </li>
+            <% end %>
+            <% (5 - @children_event.rating).times do |i| %>
+              <li>
+                  <%= link_to({controller: :children_events, action: :make_rating, id: @children_event.id, rating: (i+1+@children_event.rating)}) do %>
+                    <i class="fa fa-2x fa-fw fa-star-o rate-star"></i>
+                  <% end %>
+              </li>
+            <% end %>
+          </ol>
           <p><%= simple_format(@children_event.description) %></p>
         </div>
       </div>
@@ -41,4 +57,6 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
+
+<i class="children_event_rating" id=<%= @children_event.id %> type="hiden"></i>

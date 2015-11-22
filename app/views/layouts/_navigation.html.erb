@@ -27,6 +27,13 @@
                         <span>4</span>
                     </a>
           </li>
+          <li class="last-item">
+            <% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete,  id: "link-rodape" %>
+            <% else %>
+              <%= link_to "Sign In", new_user_session_path, id: "link-rodape" %>
+            <% end %>
+          </li>
         </ul>
       </div>
       <div class="col-md-4 col-xs-12 col-sm-12">
@@ -53,8 +60,8 @@
   </div>
 </div>
 
-<% if params[:controller] == "home" && params[:action] != "kids" %>
-  <%= render 'layouts/navigation_home' %>
-<% else %>
+<% if params[:controller] == "children_events" || params[:action] == "kids" %>
   <%= render 'layouts/navigation_kids' %>
+<% else %>
+  <%= render 'layouts/navigation_home' %>
 <% end %>

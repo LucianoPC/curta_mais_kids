@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20151120202218) do
     t.string   "sub_title"
     t.text     "description"
     t.string   "address"
-    t.integer  "rating"
+    t.integer  "rating",      default: 0
     t.binary   "photo"
     t.datetime "date_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|

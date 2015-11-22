@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get :events
       get 'event_show/:id', action: 'event_show'
+      get 'make_rating/:id', action: 'make_rating'
     end
   end
 
