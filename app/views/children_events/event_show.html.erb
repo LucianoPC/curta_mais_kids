@@ -1,191 +1,44 @@
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-  </head><body>
-    <div class="section" style="padding: 0px;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 text-left">
-            <ul id="accessibility" class="hidden-sm hidden-xs list-inline" style="padding-top:15px">
-              <li>
-                <a accesskey="1" href="#acontent" id="link-conteudo">
-                            Ir para o conteúdo
-                            <span>1</span>
-                        </a>
-              </li>
-              <li>
-                <a accesskey="2" href="#amenu" id="link-navegacao">
-                            Ir para o menu
-                            <span>2</span>
-                        </a>
-              </li>
-              <li>
-                <a accesskey="3" href="#asearch" id="link-buscar">
-                            Ir para a busca
-                            <span>3</span>
-                        </a>
-              </li>
-              <li class="last-item">
-                <a accesskey="4" href="#afooter" id="link-rodape">
-                            Ir para o rodapé
-                            <span>4</span>
-                        </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-xs-12 col-sm-12">
-            <form class="navbar-form text-right" role="search">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Pesquisa" id="asearch">
-                <div class="input-group-addon">
-                  <a href="#"><i class="-o fa fa-fw fa-lg fa-search text-muted"></i></a>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section section-primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <a href="index.html"><img src="assets/img/logo.png" class="img-responsive"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-default navbar-static-top" id="amenu">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="kids.html">+Kids</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
+<div id="acontent">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills">
             <li class="active">
-              <a href="events.html">Eventos</a>
+              <%= link_to edit_children_event_path(@children_event.id) do %>
+                <i class="fa fa-fw fa-lg fa-pencil"></i>Editar
+              <% end %>
             </li>
-            <li>
-              <a href="places.html">Locais</a>
-            </li>
-            <li>
-              <a href="brinquedotecas.html">Brinquedotecas</a>
+            <li class="">
+              <a href="#"><i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir</a>
             </li>
           </ul>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img src=<%= @children_event.photo.url %> class="img-responsive">
+        </div>
+        <div class="col-md-6">
+          <h1><%= @children_event.title %></h1>
+          <h3 contenteditable="true"><%= @children_event.date_time %></h3>
+          <p><%= simple_format(@children_event.description) %></p>
+        </div>
+      </div>
     </div>
-    <div id="acontent">
-      <div class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <ul class="nav nav-pills">
-                <li class="active">
-                  <a href="event_form.html"><i class="fa fa-fw fa-lg fa-pencil"></i>Editar</a>
-                </li>
-                <li class="">
-                  <a href="#"><i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <img src="assets/img/c3adf15949af2097c85905f8bdb84be7_XL.jpg" class="img-responsive">
-            </div>
-            <div class="col-md-6">
-              <h1>Festa da Criança na Asa Norte</h1>
-              <h3 contenteditable="true">12 de Outrubro as 16h</h3>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-                dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
-                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                elementum semper nisi.</p>
-            </div>
-          </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Como chegar?</h1>
         </div>
       </div>
-      <div class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1>Como chegar?</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <img class="center-block img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=Tombouctou,Mali&amp;zoom=12&amp;size=800x400&amp;sensor=false">
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img class="center-block img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=Tombouctou,Mali&amp;zoom=12&amp;size=800x400&amp;sensor=false">
         </div>
       </div>
-      </div>
-      <footer class="section section-primary" id="afooter">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="section">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h3 class="text-left">Quer receber notícias no seu email?</h3>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <form role="form" class="text-left">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Insira seu email">
-                            <span class="input-group-btn">
-                              <a class="btn btn-success" type="submit">Sim</a>
-                            </span>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <p class="text-info text-right">
-                <br>
-                <br>
-              </p>
-              <div class="row">
-                <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
-                  <a href="#"><i class="fa fa-3x fa-fw fa-google-plus text-inverse"></i></a>
-                  <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
-                  <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 hidden-xs text-right">
-                  <a href="#"><i class="fa fa-3x fa-fw fa-google-plus text-inverse"></i></a>
-                  <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
-                  <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    
-  
-
-</body></html>
+    </div>
+  </div>
+  </div>

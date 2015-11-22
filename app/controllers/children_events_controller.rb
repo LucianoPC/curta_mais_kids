@@ -1,5 +1,5 @@
 class ChildrenEventsController < ApplicationController
-  before_action :set_children_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_children_event, only: [:show, :edit, :update, :destroy, :event_show]
 
   def events
     @children_events = ChildrenEvent.all

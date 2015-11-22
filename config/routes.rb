@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :children_events do
     collection do
-      get :events, as: :events
-      get :event_show, as: :event_show
+      get :events
+      get 'event_show/:id', action: 'event_show'
     end
   end
 

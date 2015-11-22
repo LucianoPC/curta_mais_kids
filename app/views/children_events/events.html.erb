@@ -13,10 +13,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <a href="event_show.html"><img src=<%= children_event.photo.url %>  class="center-block img-responsive"></a>
+            <%= link_to(image_tag(children_event.photo.url), {controller: :children_events, action: :event_show, id: children_event.id}, class: "center-block img-responsive") %>
           </div>
           <div class="col-md-6">
-            <h1><%= link_to(children_event.title, children_event_path(id: children_event.id), class: "text-muted") %></h1>
+            <h1><%= link_to(children_event.title, {controller: :children_events, action: :event_show, id: children_event.id}, class: "text-muted") %></h1>
             <h3 class="hidden-xs"><%= children_event.date_time %></h3>
             <p class="hidden-sm hidden-xs"><%= simple_format(children_event.description) %></p>
           </div>
