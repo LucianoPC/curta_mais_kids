@@ -1,6 +1,10 @@
 class ChildrenEventsController < ApplicationController
   before_action :set_children_event, only: [:show, :edit, :update, :destroy]
 
+  def events
+    @children_events = ChildrenEvent.all
+  end
+
   # GET /children_events
   # GET /children_events.json
   def index

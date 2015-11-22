@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :children_events
-
   devise_for :users
   root :to => "home#index", via: [:get, :post]
+
+  resources :children_events do
+    collection do
+      get :events, as: :events
+    end
+  end
 
   # home controller
   match 'home(/:action)', :controller => 'home', via: [:get, :post, :patch]

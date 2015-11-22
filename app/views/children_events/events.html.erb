@@ -1,0 +1,79 @@
+<div id="acontent">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1">
+          <a class="btn btn-success" href="/children_events/new">Inserir Evento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% @children_events.each do |children_event| %>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="event_show.html"><img src="/images/c3adf15949af2097c85905f8bdb84be7_XL.jpg" class="center-block img-responsive"></a>
+          </div>
+          <div class="col-md-6">
+            <h1><%= link_to(children_event.title, children_event_path(id: children_event.id), class: "text-muted") %></h1>
+            <h3 class="hidden-xs"><%= children_event.date_time %></h3>
+            <p class="hidden-sm hidden-xs"><%= simple_format(children_event.description) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="event_show.html"><img src="/images/c3adf15949af2097c85905f8bdb84be7_XL.jpg" class="center-block img-responsive"></a>
+        </div>
+        <div class="col-md-6">
+          <a href="event_show.html"><h1 class="text-muted">Festa da Criança na Asa Norte</h1></a>
+          <h3 class="hidden-xs">12 de Outrubro as 16h</h3>
+          <p class="hidden-sm hidden-xs">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+            dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+            nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+            enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+            felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+            elementum semper nisi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="#"><img src="/images/ABr121013VCA011.jpg" class="center-block img-responsive"></a>
+        </div>
+        <div class="col-md-6">
+          <a href="#"><h1 class="text-muted">Reinaguração do Parque Ana Lidia</h1></a>
+          <h3 class="hidden-xs">12 de Outrubro as 16h</h3>
+          <p class="hidden-sm hidden-xs">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+            dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+            nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+            enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+            felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+            elementum semper nisi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <a class="btn btn-lg btn-success"><i class="fa fa-fw fa-plus"></i>&nbsp;Eventos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

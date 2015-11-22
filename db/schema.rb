@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20151120202218) do
 
   create_table "children_events", force: :cascade do |t|
     t.string   "title"
+    t.string   "sub_title"
     t.text     "description"
+    t.string   "address"
     t.integer  "rating"
-    t.float    "price"
+    t.binary   "photo"
     t.datetime "date_time"
-    t.string   "phone"
-    t.string   "localization"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

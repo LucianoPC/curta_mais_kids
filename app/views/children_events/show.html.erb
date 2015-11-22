@@ -10,14 +10,8 @@
   <dd><%= @children_event.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
   <dd><%= @children_event.rating %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @children_event.price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_time) %>:</strong></dt>
   <dd><%= @children_event.date_time %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @children_event.phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:localization) %>:</strong></dt>
-  <dd><%= @children_event.localization %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
