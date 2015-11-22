@@ -1,18 +1,16 @@
 <%- model_class = ChildrenEvent -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Eventos Infantis</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:rating) %></th>
-      <th><%= model_class.human_attribute_name(:date_time) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= "id" %></th>
+      <th><%= "Título" %></th>
+      <th><%= "Avaliação" %></th>
+      <th><%= "Data e Hora" %></th>
+      <th><%= "Criado em" %></th>
+      <th><%= "Ações" %></th>
     </tr>
   </thead>
   <tbody>
@@ -20,15 +18,13 @@
       <tr>
         <td><%= link_to children_event.id, children_event_path(children_event) %></td>
         <td><%= children_event.title %></td>
-        <td><%= children_event.description %></td>
         <td><%= children_event.rating %></td>
         <td><%= children_event.date_time %></td>
-        <td><%= children_event.address %></td>
         <td><%=l children_event.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to "Editar",
                       edit_children_event_path(children_event), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to "Deletar",
                       children_event_path(children_event),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
@@ -39,7 +35,7 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to "Novo Evento",
             new_children_event_path,
             :class => 'btn btn-primary' %>
 <br />
