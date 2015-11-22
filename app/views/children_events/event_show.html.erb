@@ -10,7 +10,11 @@
               <% end %>
             </li>
             <li class="">
-              <a href="#"><i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir</a>
+              <%= link_to children_event_path(@children_event),
+                          :method => :delete,
+                          :data => { :confirm => "Você tem certeza que quer deletar esse evento infantil?" } do %>
+                <i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir
+              <% end %>
             </li>
           </ul>
         </div>
