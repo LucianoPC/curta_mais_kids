@@ -11,6 +11,10 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
     <%= yield(:head) %>
   </head>
 
@@ -28,7 +32,56 @@
               <%= yield %>
             </div>
           </div>
-          <footer>
+          <footer class="section section-primary" id="afooter">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="section">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h3 class="text-left">Quer receber notícias no seu email?</h3>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <form role="form" class="text-left">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Insira seu email">
+                                <span class="input-group-btn">
+                                  <a class="btn btn-success" type="submit">Sim</a>
+                                </span>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <p class="text-info text-right">
+                    <br>
+                    <br>
+                  </p>
+                  <div class="row">
+                    <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                      <a href="#"><i class="fa fa-3x fa-fw fa-google-plus text-inverse"></i></a>
+                      <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                      <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 hidden-xs text-right">
+                      <a href="#"><i class="fa fa-3x fa-fw fa-google-plus text-inverse"></i></a>
+                      <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                      <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </footer>
         </div>
       </div> <!--! end of .container -->

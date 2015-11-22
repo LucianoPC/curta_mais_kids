@@ -1,25 +1,104 @@
-<nav class="navbar navbar-fixed-top navbar-primary nav-background-primary">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar nav-icon-bar-color-primary"></span>
-        <span class="icon-bar nav-icon-bar-color-primary"></span>
-        <span class="icon-bar nav-icon-bar-color-primary"></span>
-      </button>
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <span class="glyphicon glyphicon-home"></span>&nbsp;Curta Mais
-      <% end %>
+<div class="section" style="padding:0px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-left">
+        <ul id="accessibility" class="hidden-sm hidden-xs list-inline" style="padding-top:15px">
+          <li>
+            <a accesskey="1" href="#acontent" id="link-conteudo">
+                        Ir para o conteúdo
+                        <span>1</span>
+                    </a>
+          </li>
+          <li>
+            <a accesskey="2" href="#amenu" id="link-navegacao">
+                        Ir para o menu
+                        <span>2</span>
+                    </a>
+          </li>
+          <li>
+            <a accesskey="3" href="#asearch" id="link-buscar">
+                        Ir para a busca
+                        <span>3</span>
+                    </a>
+          </li>
+          <li class="last-item">
+            <a accesskey="4" href="#afooter" id="link-rodape">
+                        Ir para o rodapé
+                        <span>4</span>
+                    </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-12">
+        <form class="navbar-form text-right" role="search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Pesquisa" id="asearch">
+            <div class="input-group-addon">
+              <a href="#"><i class="-o fa fa-fw fa-lg fa-search text-muted"></i></a>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="collapse navbar-collapse" id="navbar">
-      <ul class="nav navbar-nav navbar-right">
+  </div>
+</div>
+<div></div>
+<div class="section section-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="index.html"><img src="assets/img/logo.png" class="img-responsive"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-default navbar-static-top" id="amenu">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+      <ul class="nav navbar-left navbar-nav">
         <li>
-          <%= link_to children_events_path, id: "nav_login" do %>
-            <span class="glyphicon glyphicon-star"></span>&nbsp; Eventos Infantis
-          <% end %>
+          <a href="#">Gastronomia</a>
+        </li>
+        <li>
+          <a href="#">Cinema</a>
+        </li>
+        <li>
+          <a href="#">Teatro</a>
+        </li>
+        <li>
+          <a href="#">Mais Cultura</a>
+        </li>
+        <li>
+          <a href="#">Compras</a>
+        </li>
+        <li>
+          <a href="#">Passeios</a>
+        </li>
+        <li>
+          <a href="kids.html">Kids</a>
+        </li>
+        <li>
+          <a href="#">Eventos</a>
+        </li>
+        <li>
+          <a href="#">Especiais</a>
+        </li>
+        <li>
+          <a href="#">Serviços</a>
+        </li>
+        <li>
+          <a href="#">Fotos</a>
         </li>
       </ul>
     </div>
   </div>
-</nav>
+</div>
+
