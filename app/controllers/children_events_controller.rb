@@ -5,6 +5,9 @@ class ChildrenEventsController < ApplicationController
     @children_events = ChildrenEvent.all
   end
 
+  def event_show
+  end
+
   # GET /children_events
   # GET /children_events.json
   def index
@@ -73,6 +76,6 @@ class ChildrenEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def children_event_params
-      params.require(:children_event).permit(:title, :description, :rating, :price, :date_time, :phone, :localization)
+      params.require(:children_event).permit(:title, :description, :rating, :price, :date_time, :phone, :localization, :photo, :address)
     end
 end
