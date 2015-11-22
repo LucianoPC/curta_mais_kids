@@ -1,5 +1,5 @@
 class ChildrenEventsController < ApplicationController
-  before_filter :authenticate_user!, except: [:events, :events_show]
+  before_filter :authenticate_user!, except: [:events, :event_show]
   before_action :set_children_event, only: [:show, :edit, :update, :destroy, :event_show, :make_rating]
 
   def events

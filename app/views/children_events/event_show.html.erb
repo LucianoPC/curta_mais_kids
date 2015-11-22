@@ -1,24 +1,26 @@
 <div id="acontent">
   <div class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="nav nav-pills">
-            <li class="active">
-              <%= link_to edit_children_event_path(@children_event.id) do %>
-                <i class="fa fa-fw fa-lg fa-pencil"></i>Editar
-              <% end %>
-            </li>
-            <li class="">
-              <%= link_to children_event_path(@children_event),
-                          :method => :delete,
-                          :data => { :confirm => "Você tem certeza que quer deletar esse evento infantil?" } do %>
-                <i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir
-              <% end %>
-            </li>
-          </ul>
+      <% if user_signed_in? %>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="nav nav-pills">
+              <li class="active">
+                <%= link_to edit_children_event_path(@children_event.id) do %>
+                  <i class="fa fa-fw fa-lg fa-pencil"></i>Editar
+                <% end %>
+              </li>
+              <li class="">
+                <%= link_to children_event_path(@children_event),
+                            :method => :delete,
+                            :data => { :confirm => "Você tem certeza que quer deletar esse evento infantil?" } do %>
+                  <i class="fa fa-fw fa-lg fa-trash-o"></i>Excluir
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class="row">
         <div class="col-md-6">
           <img src=<%= @children_event.photo.url %> class="img-responsive">
