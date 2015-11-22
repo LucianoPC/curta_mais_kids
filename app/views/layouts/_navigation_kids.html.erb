@@ -7,19 +7,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to("+Kids", kids_path, class: "navbar-brand") %>
+      <%= link_to(kids_path, class: "navbar-brand") do %>
+        <img src="/images/baby29.png" style="float: left;"> &nbsp; Kids </img>
+      <% end %>
     </div>
     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <li class= <%= "active" if params[:controller] == "children_events" %> >
-          <a href="/children_events/events.html">Eventos</a>
+        <li class= <%= "active" if params[:controller] == "children_events" %> >
+          <%= link_to("/children_events/events.html") do %>
+            <img src="/images/bears1.png" style="float: left;"> &nbsp; Eventos </img>
+          <% end %>
         </li>
         <li>
-          <a href="places.html">Locais</a>
+          <%= link_to("places.html") do %>
+            <img src="/images/train16.png" style="float: left;"> &nbsp; Locais </img>
+          <% end %>
         </li>
         <li>
-          <a href="brinquedotecas.html">Brinquedotecas</a>
+          <%= link_to("brinquedotecas.html") do %>
+            <img src="/images/toy59.png" style="float: left;"> &nbsp; Brinquedotecas </img>
+          <% end %>
         </li>
       </ul>
     </div>
