@@ -59,6 +59,8 @@ function add_toy(event) {
     +'  </li>'
     +'</ul>'
   );
+
+  $(".remove-toy").click(remove_toy);
 }
 
 
