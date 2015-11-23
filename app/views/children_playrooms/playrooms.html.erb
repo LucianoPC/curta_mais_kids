@@ -18,7 +18,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <%= link_to(image_tag(children_playroom.photo.url), {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "center-block img-responsive") %>
+            <%= link_to({controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "center-block img-responsive") do %>
+              <img src=<%= children_playroom.photo.url %> class="img-responsive">
+            <% end %>
           </div>
           <div class="col-md-6">
             <h1><%= link_to(children_playroom.name, {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "text-muted") %></h1>

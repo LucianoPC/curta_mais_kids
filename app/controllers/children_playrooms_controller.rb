@@ -10,7 +10,11 @@ class ChildrenPlayroomsController < ApplicationController
   end
 
   def make_rating
-    @children_playroom.rating = (@children_playroom.rating + params[:rating].to_i) / 2
+    if @children_playroom.rating > 0
+      @children_playroom.rating = (@children_playroom.rating + params[:rating].to_i) / 2
+    else
+      @children_playroom.rating = params[:rating].to_i
+    end
     @children_playroom.save!
 
     redirect_to({action: :playroom_show, id: @children_playroom.id}, notice: 'Parabéns, você avaliou essa brinquedoteca!')

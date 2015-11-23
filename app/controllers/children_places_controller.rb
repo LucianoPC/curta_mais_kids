@@ -10,7 +10,11 @@ class ChildrenPlacesController < ApplicationController
   end
 
   def make_rating
-    @children_place.rating = (@children_place.rating + params[:rating].to_i) / 2
+    if @children_place.rating > 0
+      @children_place.rating = (@children_place.rating + params[:rating].to_i) / 2
+    else
+      @children_place.rating = params[:rating].to_i
+    end
     @children_place.save!
 
     redirect_to({action: :place_show, id: @children_place.id}, notice: 'Parabéns, você avaliou esse lugar!')

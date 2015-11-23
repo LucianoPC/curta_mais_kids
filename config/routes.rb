@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root :to => "home#index", via: [:get, :post]
+  root :to => "home#kids", via: [:get, :post]
 
   resources :children_events do
     collection do

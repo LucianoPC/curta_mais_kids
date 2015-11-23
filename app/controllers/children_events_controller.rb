@@ -10,7 +10,11 @@ class ChildrenEventsController < ApplicationController
   end
 
   def make_rating
-    @children_event.rating = (@children_event.rating + params[:rating].to_i) / 2
+    if @children_event.rating > 0
+      @children_event.rating = (@children_event.rating + params[:rating].to_i) / 2
+    else
+      @children_event.rating = params[:rating].to_i
+    end
     @children_event.save!
 
     redirect_to({action: :event_show, id: @children_event.id}, notice: 'Parabéns, você avaliou esse evento!')
