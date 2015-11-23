@@ -18,6 +18,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :children_playrooms do
+    collection do
+      get :playrooms
+      get 'playroom_show/:id', action: 'playroom_show'
+      get 'make_rating/:id', action: 'make_rating'
+    end
+  end
+
   # home controller
   match 'home(/:action)', :controller => 'home', via: [:get, :post, :patch]
   match 'home/kids', :controller => 'home', as: :kids, via: [:get, :post]

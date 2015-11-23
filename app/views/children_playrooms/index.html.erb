@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Brinquedotecas</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Avaliação</th>
+      <th>Preço</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @children_playrooms.each do |children_playroom| %>
+      <tr>
+        <td><%= children_playroom.id %></td>
+        <td><%= children_playroom.name %></td>
+        <td><%= children_playroom.rating %></td>
+        <td><%= children_playroom.price %></td>
+        <td><%= children_playroom.phone %></td>
+        <td>
+          <%= link_to "Editar",
+                      edit_children_playroom_path(children_playroom), :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Deletar",
+                      children_playroom_path(children_playroom),
+                      :method => :delete,
+                      :data => { :confirm => "Você tem certeza que quer deletar essa brinquedoteca?" },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Nova Brinquedoteca",
+            new_children_playroom_path,
+            :class => 'btn btn-primary' %>
+<br />
+<br />

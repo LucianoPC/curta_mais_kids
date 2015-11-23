@@ -1,0 +1,52 @@
+<div id="acontent">
+  <% if user_signed_in? %>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <a class="btn btn-success" href="/children_playrooms/new">Inserir Brinquedoteca</a>
+          </div>
+          <div class="col-md-2">
+            <a class="btn btn-success" href="/children_playrooms/">Gerenciar Brinquedotecas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% @children_playrooms.each do |children_playroom| %>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to(image_tag(children_playroom.photo.url), {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "center-block img-responsive") %>
+          </div>
+          <div class="col-md-6">
+            <h1><%= link_to(children_playroom.name, {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "text-muted") %></h1>
+            <ol class="list-inline text-warning">
+              <% children_playroom.rating.times do |i| %>
+                <li>
+                    <i class="fa fa-2x fa-fw fa-star"></i>
+                </li>
+              <% end %>
+              <% (5 - children_playroom.rating).times do |i| %>
+                <li>
+                    <i class="fa fa-2x fa-fw fa-star-o"></i>
+                </li>
+              <% end %>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <a class="btn btn-lg btn-success"><i class="fa fa-fw fa-plus"></i>&nbsp;Brinquedotecas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

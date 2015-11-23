@@ -23,8 +23,8 @@
             <img src="/images/train16.png" style="float: left;"> &nbsp; Locais </img>
           <% end %>
         </li>
-        <li>
-          <%= link_to("brinquedotecas.html") do %>
+        <li class= <%= "active" if params[:controller] == "children_playrooms" %> >
+          <%= link_to("/children_playrooms/playrooms") do %>
             <img src="/images/toy59.png" style="float: left;"> &nbsp; Brinquedotecas </img>
           <% end %>
         </li>

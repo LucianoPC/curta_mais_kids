@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @children_playroom.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @children_playroom.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @children_playroom.rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @children_playroom.price %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @children_playroom.address %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @children_playroom.photo %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @children_playroom.phone %>
+</p>
+
+<p>
+  <strong>Localization:</strong>
+  <%= @children_playroom.localization %>
+</p>
+
+<%= link_to 'Edit', edit_children_playroom_path(@children_playroom) %> |
+<%= link_to 'Back', children_playrooms_path %>
