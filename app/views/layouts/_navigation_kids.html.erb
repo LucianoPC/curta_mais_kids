@@ -14,12 +14,12 @@
     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class= <%= "active" if params[:controller] == "children_events" %> >
-          <%= link_to("/children_events/events.html") do %>
+          <%= link_to("/children_events/events") do %>
             <img src="/images/bears1.png" style="float: left;"> &nbsp; Eventos </img>
           <% end %>
         </li>
-        <li>
-          <%= link_to("places.html") do %>
+        <li class= <%= "active" if params[:controller] == "children_places" %> >
+          <%= link_to("/children_places/places") do %>
             <img src="/images/train16.png" style="float: left;"> &nbsp; Locais </img>
           <% end %>
         </li>

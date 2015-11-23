@@ -35,7 +35,7 @@ function on_rate_star_hover(event) {
 }
 
 function on_rate_star_leave(event) {
-  var target_index = $(".children_event_rating")[0].id - 1;
+  var target_index = $(".children_rating")[0].id - 1;
   print_stars(target_index);
 }
 

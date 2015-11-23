@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Locais Infantis</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Avaliação</th>
+      <th>Preço</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @children_places.each do |children_place| %>
+      <tr>
+        <td><%= children_place.id %></td>
+        <td><%= children_place.name %></td>
+        <td><%= children_place.rating %></td>
+        <td><%= children_place.price %></td>
+        <td><%= children_place.phone %></td>
+        <td>
+          <%= link_to "Editar",
+                      edit_children_place_path(children_place), :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Deletar",
+                      children_place_path(children_place),
+                      :method => :delete,
+                      :data => { :confirm => "Você tem certeza que quer deletar esse local infantil?" },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Novo Local",
+            new_children_place_path,
+            :class => 'btn btn-primary' %>
+<br />
+<br />

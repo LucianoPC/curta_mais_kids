@@ -1,0 +1,52 @@
+<div id="acontent">
+  <% if user_signed_in? %>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <a class="btn btn-success" href="/children_places/new">Inserir Lugar</a>
+          </div>
+          <div class="col-md-2">
+            <a class="btn btn-success" href="/children_places/">Gerenciar Lugares</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% @children_places.each do |children_place| %>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to(image_tag(children_place.photo.url), {controller: :children_places, action: :place_show, id: children_place.id}, class: "center-block img-responsive") %>
+          </div>
+          <div class="col-md-6">
+            <h1><%= link_to(children_place.name, {controller: :children_places, action: :place_show, id: children_place.id}, class: "text-muted") %></h1>
+            <ol class="list-inline text-warning">
+              <% children_place.rating.times do |i| %>
+                <li>
+                    <i class="fa fa-2x fa-fw fa-star"></i>
+                </li>
+              <% end %>
+              <% (5 - children_place.rating).times do |i| %>
+                <li>
+                    <i class="fa fa-2x fa-fw fa-star-o"></i>
+                </li>
+              <% end %>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <a class="btn btn-lg btn-success"><i class="fa fa-fw fa-plus"></i>&nbsp;Lugares</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

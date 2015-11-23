@@ -60,7 +60,7 @@
   </div>
 </div>
 
-<% if params[:controller] == "children_events" || params[:action] == "kids" %>
+<% if params[:controller].starts_with?("children") || params[:action] == "kids" %>
   <%= render 'layouts/navigation_kids' %>
 <% else %>
   <%= render 'layouts/navigation_home' %>

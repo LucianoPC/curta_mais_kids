@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @children_place.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @children_place.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @children_place.rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @children_place.price %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @children_place.address %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @children_place.photo %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @children_place.phone %>
+</p>
+
+<p>
+  <strong>Localization:</strong>
+  <%= @children_place.localization %>
+</p>
+
+<%= link_to 'Edit', edit_children_place_path(@children_place) %> |
+<%= link_to 'Back', children_places_path %>
