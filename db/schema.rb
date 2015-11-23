@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(version: 20151123012941) do
     t.string   "photo"
     t.string   "phone"
     t.string   "localization"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "toys",         default: "--- []\n"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "users", force: :cascade do |t|

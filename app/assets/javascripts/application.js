@@ -39,12 +39,37 @@ function on_rate_star_leave(event) {
   print_stars(target_index);
 }
 
+function remove_toy(event) {
+  $(event.target).parent().parent().remove();
+}
+
+function add_toy(event) {
+  var toy = $(event.target).parent().parent().find("input").val().trim();
+  $(event.target).parent().parent().find("input").val("");
+
+  if(toy == "") {
+    return;
+  }
+
+  $("#toys-list").append(
+    '<ul class="list-group">'
+    +'  <li class="list-group-item">'+toy
+    +'    <i class="fa fa-fw fa-lg fa-trash-o pull-right text-danger remove-toy"></i>'
+    +'    <input name="children_playroom[toys][]" id="children_playroom__toys" type="hidden" value='+toy+' >'
+    +'  </li>'
+    +'</ul>'
+  );
+}
+
 
 var ready;
 
 ready = function() {
   $(".rate-star").hover(on_rate_star_hover);
   $(".rate-star").mouseleave(on_rate_star_leave);
+
+  $(".remove-toy").click(remove_toy);
+  $("#add-new-toy").click(add_toy);
 };
 
 $(document).ready(ready);

@@ -84,6 +84,6 @@ class ChildrenPlayroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def children_playroom_params
-      params.require(:children_playroom).permit(:name, :description, :rating, :price, :address, :photo, :phone, :localization)
+      params.require(:children_playroom).permit(:name, :description, :rating, :price, :address, :photo, :phone, :localization, toys: [])
     end
 end

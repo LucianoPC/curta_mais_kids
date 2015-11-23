@@ -47,6 +47,25 @@
               <%= f.text_field :phone, :class => 'form-control' %>
               <%=f.error_span(:phone) %>
             </div>
+            <div class="well">
+              <h2>Lista de Brinquedos</h2>
+              <div id="toys-list">
+                <% @children_playroom.toys.each do |toy| %>
+                  <ul class="list-group">
+                    <li class="list-group-item"><%= toy %>
+                      <i class="fa fa-fw fa-lg fa-trash-o pull-right text-danger remove-toy"></i>
+                      <input name="children_playroom[toys][]" id="children_playroom__toys" type="hidden" value=<%= toy %> >
+                    </li>
+                  </ul>
+                <% end %>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control" id="add-toy" placeholder="Nome do Brinquedo">
+                <div class="input-group-addon">
+                  <i id="add-new-toy" class="-o fa fa-fw fa-lg fa-plus text-success"></i>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-md-6">
                 <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">

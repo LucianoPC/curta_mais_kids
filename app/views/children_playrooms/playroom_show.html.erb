@@ -44,6 +44,32 @@
             <% end %>
           </ol>
           <p><%= simple_format(@children_playroom.description) %></p>
+          <div class="row">
+            <p class="lead">
+              <i class="fa fa-dollar fa-fw fa-lg"></i><%= @children_playroom.price %></p>
+          </div>
+          <div class="row">
+            <p class="lead">
+              <i class="fa fa-fw fa-lg fa-phone"></i><%= @children_playroom.phone %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <h2>Lista de Brinquedos</h2>
+            <ul class="list-unstyled">
+              <% @children_playroom.toys.each do |toy| %>
+                <li>
+                  <i class="fa fa-fw fa-lg fa-gamepad"></i><%= toy %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ class CreateChildrenPlayrooms < ActiveRecord::Migration
       t.string :photo
       t.string :phone
       t.string :localization
+      t.text :toys, array: true, default: []
 
       t.timestamps null: false
     end
