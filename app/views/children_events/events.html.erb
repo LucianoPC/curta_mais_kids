@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_events/new">Inserir Evento</a>
+            <a class="btn btn-success" href="/children_events/new" alt="Inserir Evento">Inserir Evento</a>
           </div>
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_events/">Gerenciar Eventos</a>
+            <a class="btn btn-success" href="/children_events/" alt="Gerenciar Eventos">Gerenciar Eventos</a>
           </div>
         </div>
       </div>
@@ -18,12 +18,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <%= link_to({controller: :children_events, action: :event_show, id: children_event.id}, class: "center-block img-responsive") do %>
+            <%= link_to({controller: :children_events, action: :event_show, id: children_event.id}, class: "center-block img-responsive", alt: children_event.title) do %>
               <img src=<%= children_event.photo.url %> class="img-responsive">
             <% end %>
           </div>
           <div class="col-md-6">
-            <h1><%= link_to(children_event.title, {controller: :children_events, action: :event_show, id: children_event.id}, class: "text-muted") %></h1>
+            <h1><%= link_to(children_event.title, {controller: :children_events, action: :event_show, id: children_event.id}, class: "text-muted", alt: children_event.title) %></h1>
             <h3 class="hidden-xs"><%= DateTimeHelper.format_date(children_event.date_time) %></h3>
             <ol class="list-inline text-warning">
               <% children_event.rating.times do |i| %>

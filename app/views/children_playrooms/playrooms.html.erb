@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_playrooms/new">Inserir Brinquedoteca</a>
+            <a class="btn btn-success" href="/children_playrooms/new" alt="Inserir Brinquedotecas">Inserir Brinquedoteca</a>
           </div>
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_playrooms/">Gerenciar Brinquedotecas</a>
+            <a class="btn btn-success" href="/children_playrooms/" alt="Gerenciar Brinquedotecas">Gerenciar Brinquedotecas</a>
           </div>
         </div>
       </div>
@@ -18,12 +18,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <%= link_to({controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "center-block img-responsive") do %>
+            <%= link_to({controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "center-block img-responsive", alt: children_playroom.name) do %>
               <img src=<%= children_playroom.photo.url %> class="img-responsive">
             <% end %>
           </div>
           <div class="col-md-6">
-            <h1><%= link_to(children_playroom.name, {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "text-muted") %></h1>
+            <h1><%= link_to(children_playroom.name, {controller: :children_playrooms, action: :playroom_show, id: children_playroom.id}, class: "text-muted", alt: children_playroom.name) %></h1>
             <ol class="list-inline text-warning">
               <% children_playroom.rating.times do |i| %>
                 <li>

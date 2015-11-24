@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_places/new">Inserir Local</a>
+            <a class="btn btn-success" href="/children_places/new" alt="Inserir Local">Inserir Local</a>
           </div>
           <div class="col-md-2">
-            <a class="btn btn-success" href="/children_places/">Gerenciar Locais</a>
+            <a class="btn btn-success" href="/children_places/" alt="Gerenciar Locais">Gerenciar Locais</a>
           </div>
         </div>
       </div>
@@ -18,10 +18,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <%= link_to(image_tag(children_place.photo.url), {controller: :children_places, action: :place_show, id: children_place.id}, class: "center-block img-responsive") %>
+            <%= link_to(image_tag(children_place.photo.url), {controller: :children_places, action: :place_show, id: children_place.id}, class: "center-block img-responsive", alt: children_place.name) %>
           </div>
           <div class="col-md-6">
-            <h1><%= link_to(children_place.name, {controller: :children_places, action: :place_show, id: children_place.id}, class: "text-muted") %></h1>
+            <h1><%= link_to(children_place.name, {controller: :children_places, action: :place_show, id: children_place.id}, class: "text-muted", alt: children_place.name) %></h1>
             <ol class="list-inline text-warning">
               <% children_place.rating.times do |i| %>
                 <li>
